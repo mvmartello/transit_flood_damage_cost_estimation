@@ -1,0 +1,27 @@
+﻿Item,Mean,Std. Dev
+Heavy Rail Track,18.8,5
+Heavy Rail 3rd Rail,4.672604167,1.24
+Heavy Rail Signal,9.803146732,2.601526154
+Catenary,15.19751945,4.033066668
+Light Rail Track,6.755952525,1.79287199
+GL Signal,6.535431155,1.734350769
+SL Signal,4.341,1.152
+TPSS replacement,13.4809755,3.577536
+CR Track and Signal,11.44246257,3.036562286
+CR Layover Facility,27.72968786,7.358811429
+CR Station,23.68008609,6.284141714
+Connecting Station,255.1518919,42.75239962
+GL Surface Station,12.37016183,3.282752
+GL Underground Station,79.07824443,13.25008677
+Heavy Rail Underground Station,169.1586625,28.34366103
+Heavy Rail Surface Station,77.79387051,13.03488136
+SL Underground Station,38.89895941,6.51777984
+Wellington Yard,160.7617,42.6624
+Cabot Yard,337.4404,89.5488
+Codman Yard,64.6809,17.1648
+Orient Heights Yard,183.769,48.768
+Boston Engine Terminal,542.9144,144.0768
+CR Yard,221.1016,58.6752
+Duct Bank (at-grade),9.9,2.6
+Duct Bank (tunnel),17.2,4.6
+BL Tunnel,274.9,72.96

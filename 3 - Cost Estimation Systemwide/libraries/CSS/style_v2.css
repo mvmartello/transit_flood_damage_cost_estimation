@@ -1,0 +1,214 @@
+
+/* Style Sheet 1 - Table of Contents
+ 
+    1. Dummy class (for jQuery button hover)
+    2. Side display classes
+        2a. Main class
+        2b. Dropdown title class
+        2c. Dropdown button
+        2d. Dropdown content
+        2e. Dropdown content buttons
+        2f. Results viewport
+    3. Map Viewport
+    4. Processing page style
+    5. Footer style
+    6. Texarea style
+    7. d3 Bar Chart Style
+    
+*/
+    
+    /* 1. Dummy class for dropdown button jQuery hover */
+    .dummy_class{
+        color: #288a80;
+        background-color: #e3e3e3;
+    }
+    
+    /*2. Side-display classes */
+    
+    /* 2a. Main sidebar class*/
+    .sidebar{
+        right: 0;
+        position: fixed;
+        border: none;
+        outline: none;
+        padding-right: 1%;
+        padding-left: 1%;
+        padding-top: 0.75%;
+        margin-top: 1%;
+        margin-right: 1%;
+        width: 25%;
+        background-color: #e3e3e3;
+        color: #3d3d3d;
+        text-align: right;
+        vertical-align: text-top;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        z-index: 2;
+        overflow: auto;
+    }
+    
+    /* 2b. Dropdown buttons*/
+    .dropbtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-left: 40%;
+        margin-top: 2%;
+        min-width: 20%;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 100%;
+        overflow: auto;
+        cursor: pointer;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        font-family:Arial, Helvetica, sans-serif;
+        display: block;
+      }
+      
+      .dropdown a:hover {background-color: #ddd;}
+      
+      .show {display: block;}
+
+
+    /* 2f. Results Viewport class*/
+    .results_port{
+        right: 0;
+        position: fixed;
+        border: none;
+        outline: none;
+        padding-right: 1%;
+        padding-left: 2%;
+        padding-top: 1%;
+        padding-bottom: 0;
+        margin-top: 1%;
+        margin-right: 1%;
+        height: 15%;
+        width: 24%;
+        background-color: #e3e3e3;
+        color: #3d3d3d;
+        text-align: left;
+        vertical-align: text-top;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 1.0vw;
+        line-height: 150%;
+        z-index: 2;
+        overflow: auto;
+    }
+    
+/* 3. Map Viewport */
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    
+/* 4. Processing Page Style */
+    .load_page {
+        box-sizing: border-box;
+        border: 2pt solid #e3e3e3;
+        margin-left: 22%;
+        margin-top: 16%;
+        position: absolute;
+        height: 30%;
+        width: 30%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 3%;
+        padding-bottom: 5%;
+        color: #3d3d3d;
+        background-color: rgba(115, 140, 140,1);
+        z-index: -1;
+        color: #3d3d3d; background-color: rgba(115, 140, 140,0.85);
+    }
+    
+/* 5. Footer style */
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #e3e3e3;
+      color: #3d3d3d;
+      font-size: 11pt;
+      font-family:helvetica;
+      text-align: center;
+      vertical-align: text-top;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+
+
+input[type=text]:focus {
+    border: 2px solid #e3e3e3;
+}
+
+/* 6. Textarea style */
+    textarea{
+        width: 85%; 
+        height: 32vh;
+        background-color: #e3e3e3;
+        text-align: right;
+        color: white;
+        border: 2px solid #e3e3e3;
+        border-radius: 4px;
+    }
+
+/* 7. d3 Bar Chart Style */
+/* 9. d3 graph styles */
+    .x_axis_g path,
+    .x_axis_g line {
+        fill: none;
+        stroke: #3d3d3d;
+        stroke-width: 1.75px;
+    }
+    .x_axis_g text {
+        font-size: 16px;
+        color: #3d3d3d;
+    }
+    .y_axis_g path,
+    .y_axis_g line {
+        fill: none;
+        stroke: #3d3d3d;
+        stroke-width: 1.75px;
+    }
+    .y_axis_g text {
+        font-size: 16px;
+        color: #3d3d3d;
+    }
+    
+    .tick_g path,
+    .tick_g line {
+        fill: none;
+        stroke: #e0e0e0;
+        stroke-width: 1.75px;
+    }
+    .tick_g text {
+        font-size: 0px;
+        color: #ffffff;
+    }
