@@ -1,0 +1,319 @@
+
+/* Style Sheet 1 - Table of Contents
+ 
+    1. Dummy class (for jQuery button hover)
+    2. Side display classes
+        2a. Main class
+        2b. Dropdown title class
+        2c. Dropdown button
+        2d. Dropdown content
+        2e. Dropdown content buttons
+        2f. Results viewport
+    3. Map Viewport
+    4. Processing page style
+    5. d3 bar chart style
+    6. Footer style
+    7. Form Input style
+    8. Texarea style
+    
+*/
+    
+    /* 1. Dummy class for dropdown button jQuery hover */
+    .dummy_class{
+        color: #288a80;
+        background-color: #e3e3e3;
+    }
+    
+    /*2. Side-display classes */
+    
+    /* 2a. Main sidebar class*/
+    .sidebar{
+        right: 0;
+        position: fixed;
+        border: none;
+        outline: none;
+        padding-right: 1%;
+        padding-left: 1%;
+        padding-top: 0.75%;
+        margin-top: 1%;
+        margin-right: 1%;
+        width: 25%;
+        background-color: #e3e3e3;
+        color: #000000;
+        text-align: right;
+        vertical-align: text-top;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        z-index: 2;
+        overflow: auto;
+    }
+    
+    /* 2b. Sidebar Dropdown Title */
+    .dropdown {
+        right: 0;
+        position: fixed;
+        border: none;
+        outline: none;
+        padding-right: 1%;
+        padding-top: 0.75%;
+        margin-top: 1%;
+        margin-right: 1%;
+        width: 26%;
+        background-color: #e3e3e3;
+        text-align: right;
+        vertical-align: text-top;
+        font-family:Arial, Helvetica, sans-serif;
+        float: right;
+        overflow: hidden;
+        height: 2.25%;
+        font-size: 1vw;
+        line-height: 0.5vw;
+        color: #000000;
+        padding-bottom: 0.25%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    
+    
+    /* 2c. Dropdown Button */
+    .dropdown .dropbtn {
+        font-size: 1.2vw;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 1vw 0.5vw;
+        background-color: inherit;
+        font: inherit;
+        margin: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        ms-user-select: none;
+        user-select: none;
+    }
+    /* Create hover action */
+    .dropdown:hover, .dropbtn {
+        background-color: #454a47;
+        color: #ffffff ;
+    }
+    /* 2d. Create dropdown content */
+    .dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+         width: 100%;
+         left: 0;
+         z-index: 5;
+    }
+    /* Dropdown hover action */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+         
+    /* 2e. Dropdown content buttons */
+    .d-cont-btn {
+        right: 0;
+        position: fixed;
+        border: none;
+        outline: none;
+        padding-right: 1%;
+        padding-top: 0.75%;
+        margin-top: 1%;
+        margin-right: 1%;
+        width: 26%;
+        background-color: #e3e3e3;
+        text-align: right;
+        vertical-align: text-top;
+        font-family:Arial, Helvetica, sans-serif;
+        float: right;
+        overflow: hidden;
+        height: 2.25%;
+        font-size: 1vw;
+        line-height: 0.5vw;
+        color: #000000;
+        padding-bottom: 0.25%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        width:27%;
+        height:4%;
+        /* makes the object appear clickable */
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        ms-user-select: none;
+        user-select: none;
+    }
+    
+    .d-cont-btn:disabled {
+         cursor: default;
+    }
+
+    /* 2f. Results Viewport class*/
+    .results_port{
+        right: 0;
+        position: fixed;
+        border: none;
+        outline: none;
+        padding-right: 1%;
+        padding-left: 2%;
+        padding-top: 1%;
+        padding-bottom: 0;
+        margin-top: 1%;
+        margin-right: 1%;
+        height: 15%;
+        width: 24%;
+        background-color: #e3e3e3;
+        color: #000000;
+        text-align: left;
+        vertical-align: text-top;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 1.0vw;
+        line-height: 150%;
+        z-index: 2;
+        overflow: auto;
+    }
+    
+/* 3. Map Viewport */
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+    
+/* 4. Processing Page Style */
+    .load_page {
+        box-sizing: border-box;
+        border: 2pt solid #e3e3e3;
+        margin-left: 22%;
+        margin-top: 16%;
+        position: absolute;
+        height: 30%;
+        width: 30%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 3%;
+        padding-bottom: 5%;
+        color: #000000;
+        background-color: rgba(115, 140, 140,1);
+        z-index: -1;
+        color: #000000; background-color: rgba(115, 140, 140,0.85);
+    }
+
+/* 5. d3 Bar Chart Style */
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: none;
+        stroke-width: 3px;
+    }
+    .axis text {
+        font-size: 25px;
+        fill: #000000;
+    }
+    .x.axis path,
+    .x.axis line {
+        fill: none;
+        stroke: #000000;
+        stroke-width: 0px;
+    }
+    .x.axis text {
+        font-size: 25px;
+        color: #000000;
+    }
+    /*    .bar {
+        fill: #8CD3DD;
+    }*/
+    svg text.label {
+        fill: #000000;
+        font-size: 25px;  
+        font-weight: 400;
+        text-anchor: middle;
+    }
+    .results_chart {
+         right: 0;
+        position: fixed;
+        border: none;
+        outline: none;
+        padding-right: 1%;
+        padding-top: 0.75%;
+        margin-top: 1%;
+        margin-right: 1%;
+        width: 26%;
+        color: #fff;
+        background-color: #e3e3e3;
+    }
+    
+/* 6. Footer style */
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #e3e3e3;
+      color: #000000;
+      font-size: 0.8vw;
+      font-family:helvetica;
+      text-align: center;
+      vertical-align: text-top;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+
+
+input[type=text]:focus {
+    border: 2px solid #e3e3e3;
+}
+
+/* 8. Textarea style */
+    textarea{
+        width: 85%; 
+        height: 32vh;
+        background-color: #e3e3e3;
+        text-align: right;
+        color: white;
+        border: 2px solid #e3e3e3;
+        border-radius: 4px;
+    }
+
+/* 9. d3 graph styles */
+    .x_axis_g path,
+    .x_axis_g line {
+        fill: none;
+        stroke: #000000;
+        stroke-width: 1.5px;
+    }
+    .x_axis_g text {
+        font-size: 15px;
+        color: #000000;
+    }
+    .y_axis_g path,
+    .y_axis_g line {
+        fill: none;
+        stroke: #000000;
+        stroke-width: 1.5px;
+    }
+    .y_axis_g text {
+        font-size: 15px;
+        color: #000000;
+    }
+    
+    .tick_g path,
+    .tick_g line {
+        fill: none;
+        stroke: #e0e0e0;
+        stroke-width: 1px;
+    }
+    .tick_g text {
+        font-size: 0px;
+        color: #ffffff;
+    }
+    .x_axis_g_inset text {
+        font-size: 2px;
+        color: #000000;
+    }
+    .y_axis_g_inset text {
+        font-size: 2px;
+        color: #000000;
+    }
