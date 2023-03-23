@@ -1,0 +1,20 @@
+Notes:
+
+- A portion of the required data is subject to a non-disclosure agreement (NDA) and is therefore not included here. More specifically, the SWMM input file for the MBTA system (Root.inp) contains sensitive data subject to an NDA. Unfortunately, absent this data, the code will not function properly.
+
+The supporting code provided here consists of 3 main repositories:
+
+1 - EPA SWMM Batch Processing
+2 - Hydraulic Results Systemwide
+3 - Cost Estimation Systemwide
+4 - EAL vs. time with SLR
+ 
+Each repository produces a set of output data that directly serves as input for the next repository.
+
+Repository 1 provides the data and code required for the batch processing of the hydraulic model (less files that rely on sensitive data).
+
+Repository 2 provides the data and code required to plot the hydraulic model results and at-grade flood depths for each rail transit line. This code also provides flood depths for each discrete unit of interest in the system (stations, maintenance facilities, right of way at 10 ft (3 m) increments.
+
+Repository 3 provides the data and code required to estimate flood damage costs for each flood event of interest.
+
+Repository 4 provides the data and code requires to estimate uncertain expected annual losses (EAL) over time considering SLR uncertainty (based on IPCC AR6 projections for Boston Harbor).
