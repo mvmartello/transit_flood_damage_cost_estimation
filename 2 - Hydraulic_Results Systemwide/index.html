@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+  <title>MBTA Hydraulic Model Results</title>
+  <link rel="icon" href="libraries/Icons/cee_favicon.ico">
+  <!-- Load in stylesheet -->
+  <link rel="stylesheet" href="libraries/CSS/style_v2.css">
+
+  <!-- Load in jStat -->
+  <script src="libraries/js/JS Libraries/jstat.min.js"></script>
+
+  <!-- Load in d3 -->
+  <script src="http://d3js.org/d3.v3.min.js" ></script>
+
+  <!-- Load in Chart.js -->
+  <script src="libraries/js/JS Libraries/chart.js"></script>
+  
+  <!-- Load in Underscore.js -->
+  <script src="libraries/js/JS Libraries/underscore_1_8_3.js"></script>
+
+  
+</head>
+
+<body style="background-color:#ffffff">
+  
+  <!-- Title Block-->
+  <header>
+  <p style="top: 0; height: 8%; text-align: center; padding-top: 1%; font-family: Arial; font-size: 175%"> <b>MBTA Hydraulic Model Results</b></p>
+  </header>
+  
+  <!-- Map image -->
+  <img src="libraries/Icons/MBTA interconnected tunnels plan view.png" alt="Plan view of interconnected tunnels in MBTA system" style="position: relative; top: 1%; left: 35%; padding-top: 1%; width: 30%">
+  
+  <!-- Figure 1 title -->
+  <div>
+   <p style="top: 0; height: 8%; text-align: center; padding-top: 0%; font-family: Arial; font-size: 125%"> <b>Fig. 1. </b> Plan View of Interconnected Rapid Transit Tunnels in the MBTA System </p>
+  </div>
+
+  <div class="dropdown">
+  <button onclick="dropdown_click();" class="dropbtn"> </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a onclick="load_result(19961);">Oct. 1996 Muddy River Flood</a>
+    <a onclick="load_result(1);">+0m SLR 1-2 year event</a>
+    <a onclick="load_result(2);">+0m SLR 1-10 year event</a>
+    <a onclick="load_result(3);">+0m SLR 1-20 year event</a>
+    <a onclick="load_result(4);">+0m SLR 1-100 year event</a>
+    <a onclick="load_result(5);">+0m SLR 1-1000 year event</a>
+    <a onclick="load_result(6);">+0.37m SLR 1-2 year event</a>
+    <a onclick="load_result(7);">+0.37m SLR 1-10 year event</a>
+    <a onclick="load_result(8);">+0.37m SLR 1-20 year event</a>
+    <a onclick="load_result(9);">+0.37m SLR 1-100 year event</a>
+    <a onclick="load_result(10);">+0.37m SLR 1-1000 year event</a>
+    <a onclick="load_result(11);">+0.73m SLR 1-2 year event</a>
+    <a onclick="load_result(12);">+0.73m SLR 1-10 year event</a>
+    <a onclick="load_result(13);">+0.73m SLR 1-20 year event</a>
+    <a onclick="load_result(14);">+0.73m SLR 1-100 year event</a>
+    <a onclick="load_result(15);">+0.73m SLR 1-1000 year event</a>
+    <a onclick="load_result(16);">+1.31m SLR 1-2 year event</a>
+    <a onclick="load_result(17);">+1.31m SLR 1-10 year event</a>
+    <a onclick="load_result(18);">+1.31m SLR 1-20 year event</a>
+    <a onclick="load_result(19);">+1.31m SLR 1-100 year event</a>
+    <a onclick="load_result(20);">+1.31m SLR 1-1000 year event</a>
+  </div>
+</div>
+
+  <!-- Figure 2 title -->
+  <div id="fig2_caption">
+   <p style="top: 0; height: 8%; text-align: center; padding-top: 3%; margin-bottom: 0%; font-family: Arial; font-size: 125%"> <b>Fig. 2. </b> Longitudinal Sections of Interconnected Rapid Transit Tunnels </p>
+  </div>
+
+  <!--Svg RL1-->
+  <svg id="svgRL1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg RL2-->
+  <svg id="svgRL2" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg RL3-->
+  <svg id="svgRL3" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg RL4-->
+  <svg id="svgRL4" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg RL5-->
+  <svg id="svgRL5" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg RL6-->
+  <svg id="svgRL6" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg RL7-->
+  <svg id="svgRL7" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  
+  <!--Svg RLd1-->
+  <svg id="svgRLd1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg RLd2-->
+  <svg id="svgRLd2" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  
+  <!--Svg OL1-->
+  <svg id="svgOL1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg OL2-->
+  <svg id="svgOL2" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg OL3-->
+  <svg id="svgOL3" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg OL4-->
+  <svg id="svgOL4" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg OL5-->
+  <svg id="svgOL5" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  
+  <!--Svg BL1-->
+  <svg id="svgBL1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg BL2-->
+  <svg id="svgBL2" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg BL3-->
+  <svg id="svgBL3" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  
+  <!--Svg GL1-->
+  <svg id="svgGL1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL2-->
+  <svg id="svgGL2" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  
+  <!--Svg GL_B1-->
+  <svg id="svgGL_B1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL_B2-->
+  <svg id="svgGL_B2" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL_C1-->
+  <svg id="svgGL_C1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL_D1-->
+  <svg id="svgGL_D1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL_D2-->
+  <svg id="svgGL_D2" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL_D3-->
+  <svg id="svgGL_D3" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top: 0.5%; padding-bottom: 0%; font-family: Arial" viewBox="0 0 16000 150" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL_D4-->
+  <svg id="svgGL_D4" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg GL_E1-->
+  <svg id="svgGL_E1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  <!--Svg SL1-->
+  <svg id="svgSL1" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-bottom: 2.5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+  
+  <!--Svg Summa-->
+  <svg id="svgSumma" style="position: relative; top: 0%; left: 5%; width:1000%; background-color: white; padding-top:  5%; padding-bottom: 5%; font-family: Arial" viewBox="0 0 16000 210" preserveAspectRatio= "xMidYMid meet">
+  </svg>
+
+  <!-- Javascript programming chunks -->
+  <script src="libraries/js/results_plotting.js"></script>
+  <script src="libraries/js/results_importing.js"></script>
+  <script src="libraries/js/drop_down.js"></script>
+  <script src="Input/tunnel_data.js"></script>
+  <script src="libraries/js/results_exporting.js"></script>
+  
+  <!-- Load in data -->
+  <script src="Input/Reports/exposure_all_out.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <p><i>v2022.05 &nbsp &nbsp &nbsp M.V.Martello &nbsp &nbsp &nbsp Massachusetts Institute of Technology  &nbsp &nbsp &nbsp  &copy; 2022</i></p>
+  </footer>
+  
+  
+</body>
+</html>
