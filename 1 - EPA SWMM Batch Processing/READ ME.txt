@@ -1,0 +1,14 @@
+Notes: 
+
+- A portion of the required data is subject to a non-disclosure agreement (NDA) and is therefore not included here. More specifically, the SWMM input file for the MBTA system (Root.inp) contains sensitive data subject to an NDA.
+- This code (specifically the run.bat file) requires installation of Command Line SWMM for successful completion.
+- This code requires the ability to run python scripts (execute .py files)
+
+How to use this code:
+
+Dxx.csv files contain water surface elevation time series data for SWMM model junctions based on Massachusetts Coastal Flood Risk Model (MC-FRM) data
+
+Run "CSV to DAT2.py" to convert these Dxx.csv files into the appropriate number .DAT files. These serve as input for EPA SWMM input files. 
+Run "Editing INP File3.py" to generate appropriate EPA SWMM files based on the "Root.inp" template. This code also organizes the files into separate folders for each coastal flood scenario.
+Run the "run.bat" file to execute Command Line SWMM for each coastal flood scenario.
+Run "report to CSV.py" to convert the EPA SWMM output files to a .csv format for further processing in the Hydraulic Results Viewer.
